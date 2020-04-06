@@ -4,17 +4,21 @@ import AddProject from './components/projects/AddProject';
 import Dashboard from './components/Dashboard';
 import HeaderComponent from './components/layouts/HeaderComponent';
 import './App.css';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   return (
     <div>
-      <Router>
-        <div>
-          <HeaderComponent />
-        </div>
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/projectForm" component={AddProject} />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <div>
+            <HeaderComponent />
+          </div>
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/projectForm" component={AddProject} />
+        </Router>
+      </Provider>
     </div>
   );
 }

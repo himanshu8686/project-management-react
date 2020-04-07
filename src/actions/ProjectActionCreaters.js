@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { GET_ERRORS } from './ProjectActionTypes';
+import { GET_PROJECTS } from './ProjectActionTypes';
 
 export const createProject = (project, history) => async dispatch => {
     try {
@@ -17,3 +18,12 @@ export const createProject = (project, history) => async dispatch => {
     }
 };
 
+export const getProjects = () => async dispatch => {
+    const res = await axios.get("http://localhost:8080/api/projects");
+    console.log("get project response ", res);
+
+    dispatch({
+        type: GET_PROJECTS,
+        payload: res.data
+    });
+};

@@ -31,11 +31,9 @@ class Dashboard extends Component {
                             <br />
 
                             <CreateProjectButton />
-                            {/* <button onClick={this.click}> Projects</button> */}
+
                             <br />
                             <hr />
-
-                            {/* {console.log("==>", projects)} */}
 
                             {
                                 projects.map(project => {

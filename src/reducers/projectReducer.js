@@ -1,4 +1,4 @@
-import { GET_PROJECTS } from '../actions/ProjectActionTypes';
+import { GET_PROJECTS, DELETE_PROJECT } from '../actions/ProjectActionTypes';
 import { GET_PROJECT } from '../actions/ProjectActionTypes';
 
 const initialState = {
@@ -23,6 +23,12 @@ export default function (state = initialState, action) {
                 }
             );
 
+        case DELETE_PROJECT:
+            return (
+                {
+
+                }
+            );
         default:
             return state;
     }
